@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -23,6 +24,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.WebView.FindListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -30,6 +32,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import king.chad.toaster.ToastIt;
 
@@ -45,24 +48,30 @@ public class MainActivity extends Activity
 	private static final int PIC_REQUEST_EXTERNAL = 1001;
 	private static final int HEXCODE_BACKGROUND_COLOR = 1002;
 	private static final int HEXCODE_TXT_COLOR = 1003;
+	private static final int TOASTER_MESSAGE = 1004;
 	Bitmap bmp;
 	Typeface font;
 	String backgroundHexValue = "#000000";
-	String textHexValue = "#000000";
+	String textHexValue = "#ffffff";
 	
 	//--Sample Controls--
 	LinearLayout llHexCode;
 	LinearLayout llTxtHexCode;
+	LinearLayout llToasterMessage;
 	Button btnToatstIt;
 	Button btnGetImage;
 	//EditText txtBackgroundHexCode;
-	EditText txtMessage;
+	TextView txtMessage;
 	EditText txtDuration;
 	//EditText txtMessageHexCodeColor;
 	Spinner spinnerFontAwesome;
 	//Spinner spinnerFontAwesomeAnimation;
-	Spinner spinnerFontAwesomeSpeed;
+	//Spinner spinnerFontAwesomeSpeed;
 	Spinner spinnerSelectFont;
+	TextView txtBGColor;
+	TextView txtMessageColor;
+	LinearLayout canMessageColor;
+	LinearLayout canBGColor;
 	
     /** Called when the activity is first created. */
     @Override
@@ -82,21 +91,28 @@ public class MainActivity extends Activity
         btnToatstIt = (Button) findViewById(king.chad.toastersample.R.id.btnDisplayToast);
         btnGetImage = (Button) findViewById(king.chad.toastersample.R.id.btnGetImage);
         //txtBackgroundHexCode = (EditText) findViewById(king.chad.toastersample.R.id.txtHexCode);
-        txtMessage = (EditText) findViewById(king.chad.toastersample.R.id.txtMessage);
+        txtMessage = (TextView) findViewById(king.chad.toastersample.R.id.txtMessage);
         txtDuration = (EditText) findViewById(king.chad.toastersample.R.id.txtDuration);
         //txtMessageHexCodeColor = (EditText) findViewById(king.chad.toastersample.R.id.txtMessageColor);
         spinnerFontAwesome = (Spinner) findViewById(king.chad.toastersample.R.id.spinnerFontAwesome);
         //spinnerFontAwesomeAnimation = (Spinner) findViewById(king.chad.toastersample.R.id.spinnerFontAwesomeAnimation);
-        spinnerFontAwesomeSpeed = (Spinner) findViewById(king.chad.toastersample.R.id.spinnerFontAwesomeSpeed);
+        //spinnerFontAwesomeSpeed = (Spinner) findViewById(king.chad.toastersample.R.id.spinnerFontAwesomeSpeed);
         spinnerSelectFont = (Spinner) findViewById(king.chad.toastersample.R.id.spinnerSelectFont);
+        
+        txtBGColor = (TextView) findViewById(king.chad.toastersample.R.id.txtBGColor);
+        txtMessageColor = (TextView) findViewById(king.chad.toastersample.R.id.txtMessageColor);
         
         llHexCode = (LinearLayout) findViewById(king.chad.toastersample.R.id.llHexCode);
         llTxtHexCode = (LinearLayout) findViewById(king.chad.toastersample.R.id.llTxtHexCode);
+        llToasterMessage = (LinearLayout) findViewById(king.chad.toastersample.R.id.llToasterMessage);
+        
+        canMessageColor = (LinearLayout) findViewById(king.chad.toastersample.R.id.canMessageColor);
+        canBGColor = (LinearLayout) findViewById(king.chad.toastersample.R.id.canBGColor);
         
         
         populateFontIcons();
         //populateFontIconsAnimation();
-        populateFontIconsSpeed();
+        //populateFontIconsSpeed();
         populateFontTypeface();
         
         OnClickListener ll_click = new OnClickListener() {
@@ -104,8 +120,8 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View v) {
             	
-            	Intent i1 = new Intent("king.chad.toaster.sample.HexcodeSelectorActivity");
-				startActivityForResult(i1, HEXCODE_BACKGROUND_COLOR);
+            	Intent i = new Intent("king.chad.toaster.sample.HexcodeSelectorActivity");
+				startActivityForResult(i, HEXCODE_BACKGROUND_COLOR);
             }
         };
         
@@ -114,13 +130,24 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View v) {
             	
-            	Intent i1 = new Intent("king.chad.toaster.sample.HexcodeSelectorActivity");
-				startActivityForResult(i1, HEXCODE_TXT_COLOR);
+            	Intent i = new Intent("king.chad.toaster.sample.HexcodeSelectorActivity");
+				startActivityForResult(i, HEXCODE_TXT_COLOR);
+            }
+        };
+        
+        OnClickListener ll_click3 = new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+            	
+            	Intent i = new Intent("king.chad.toaster.sample.ToasterTextActivity");
+				startActivityForResult(i, TOASTER_MESSAGE);
             }
         };
         
         llHexCode.setOnClickListener(ll_click);
         llTxtHexCode.setOnClickListener(ll_click2);
+        llToasterMessage.setOnClickListener(ll_click3);
 
         btnToatstIt.setOnClickListener(new View.OnClickListener() 
         {
@@ -252,7 +279,7 @@ public class MainActivity extends Activity
 
        });
         
-        spinnerFontAwesomeSpeed.setOnItemSelectedListener(new OnItemSelectedListener() 
+        /*spinnerFontAwesomeSpeed.setOnItemSelectedListener(new OnItemSelectedListener() 
         {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) 
@@ -266,7 +293,7 @@ public class MainActivity extends Activity
              
             }
 
-       });
+       });*/
         
         spinnerSelectFont.setOnItemSelectedListener(new OnItemSelectedListener() 
         {
@@ -693,7 +720,7 @@ public class MainActivity extends Activity
     }
 
     
-    public void populateFontIconsSpeed()
+   /* public void populateFontIconsSpeed()
     {
     	try
     	{
@@ -722,7 +749,7 @@ public class MainActivity extends Activity
         {
 
         }
-    }
+    }*/
     
     public void populateFontTypeface()
     {
@@ -777,8 +804,9 @@ public class MainActivity extends Activity
     		if (resultCode == RESULT_OK)
     		{
     			backgroundHexValue = data.getDataString().toString();
-    			
-    			llHexCode.setBackgroundColor(Color.parseColor(backgroundHexValue));
+    			txtBGColor.setText("Selected Hexcode: " + backgroundHexValue);
+    			//llHexCode.setBackgroundColor(Color.parseColor(backgroundHexValue));
+    			canBGColor.setBackgroundColor(Color.parseColor(backgroundHexValue));
     		}
     	}
     	else if (requestCode == HEXCODE_TXT_COLOR)
@@ -786,8 +814,16 @@ public class MainActivity extends Activity
     		if (resultCode == RESULT_OK)
     		{
     			textHexValue = data.getDataString().toString();
-    			
-    			llTxtHexCode.setBackgroundColor(Color.parseColor(textHexValue));
+    			txtMessageColor.setText("Selected Hexcode: " + textHexValue);
+    			//llTxtHexCode.setBackgroundColor(Color.parseColor(textHexValue));
+    			canMessageColor.setBackgroundColor(Color.parseColor(textHexValue));
+    		}
+    	}
+    	else if (requestCode == TOASTER_MESSAGE)
+    	{
+    		if (resultCode == RESULT_OK)
+    		{
+    			txtMessage.setText(data.getDataString().toString());
     		}
     	}
     	else if (requestCode == PIC_REQUEST_EXTERNAL)

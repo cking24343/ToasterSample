@@ -256,7 +256,7 @@ public final class R {
 		public static final int edittext_background_rounded = 0x7f020010;
 	}
 	public static final class id {
-		public static final int action_settings = 0x7f0a0028;
+		public static final int action_settings = 0x7f0a002c;
 		public static final int imgFontAwesome = 0x7f0a0006;
 		public static final int layout = 0x7f0a0000;
 		public static final int lblColA = 0x7f0a0022;

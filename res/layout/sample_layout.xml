@@ -3,7 +3,7 @@
     android:layout_height="fill_parent"
     android:background="#0099CC"
     android:gravity="center_horizontal"
-    android:orientation="vertical" >
+    android:orientation="vertical" > <!-- #0099CC -->
     
     <ScrollView
         android:layout_centerVertical="false"
@@ -23,7 +23,8 @@
 			android:layout_gravity="center"
 			android:layout_centerVertical="false"
 	    	android:layout_centerHorizontal="true"
-			android:background="#FFFFFF">	
+	    	android:background="#FFFFFF"
+			> <!--  -->	
 										
 			<ImageView
 				android:id="@+id/logo" 
@@ -34,85 +35,165 @@
 				android:layout_marginBottom="6dp" />
 
 			<LinearLayout
+			    android:alpha="0.7"
 		        android:id="@+id/llHexCode"
-				android:layout_height="50dp" 
+				android:layout_height="wrap_content" 
 				android:layout_width="275dp"
-				android:orientation="vertical"
-				android:layout_marginTop="10dp"
-				android:layout_margin="12dp"
+				android:orientation="horizontal"
+				android:layout_margin="4dp"
 				android:padding="10dp"
 				android:layout_gravity="center"
 				android:layout_centerVertical="false"
 		    	android:layout_centerHorizontal="true"
-				android:background="#000000"
+				android:background="#6F6E6E"
 				android:clickable="true">	
-				
-		         <TextView
-				    style="@style/viewStyle"
-				    android:textSize="16dp"
-				    android:textColor="#ffffff"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:gravity="center"
-				    android:paddingLeft="4dp"
-				    android:paddingBottom="2dp"
-				    android:layout_marginBottom="2dp"
-				    android:text="Select Toaster Background Color" />
+
+		         <LinearLayout
+			        android:id="@+id/ll1"
+					android:layout_height="wrap_content" 
+					android:layout_width="210dp"
+					android:orientation="vertical">
+					
+		              <TextView
+						    style="@style/viewStyle"
+						    android:textSize="16dp"
+						    android:textColor="#ffffff"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:gravity="center"
+						    android:paddingLeft="4dp"
+						    android:paddingBottom="2dp"
+						    android:layout_marginBottom="2dp"
+						    android:text="Select Toaster Back Color" />
+		             
+		              <TextView
+						    style="@style/viewStyle"
+						    android:textSize="12dp"
+						    android:textColor="#ffffff"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:gravity="center"
+						    android:padding="4dp"
+						    android:paddingBottom="2dp"
+						    android:layout_marginBottom="2dp"
+						    android:text="Selected Hexcode: N/A" 
+						    android:id="@+id/txtBGColor"/>
+		          
+			          
+		             
+		         </LinearLayout>
 		         
-		          <TextView
-				    style="@style/viewStyle"
-				    android:textSize="12dp"
-				    android:textColor="#ffffff"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:gravity="center"
-				    android:paddingLeft="4dp"
-				    android:paddingBottom="2dp"
-				    android:layout_marginBottom="2dp"
-				    android:text="Selected Hexcode: N/A" 
-				    android:id="@+id/txtBGColor"/>
+		         <LinearLayout  
+			              	android:orientation="vertical"
+				            android:background="#000000"
+				            android:paddingLeft="8dp"
+				            android:id="@+id/canBGColor"
+				            android:layout_width="fill_parent"
+						    android:layout_height="fill_parent"/>
+		         
 		        
 			</LinearLayout>
 			
 			<LinearLayout
+			    android:alpha="0.7"
 		        android:id="@+id/llTxtHexCode"
-				android:layout_height="50dp" 
+				android:layout_height="wrap_content" 
 				android:layout_width="275dp"
-				android:orientation="vertical"
-				android:layout_marginTop="10dp"
-				android:layout_margin="12dp"
+				android:orientation="horizontal"
+				android:layout_margin="4dp"
 				android:padding="10dp"
 				android:layout_gravity="center"
 				android:layout_centerVertical="false"
 		    	android:layout_centerHorizontal="true"
-				android:background="#000000"
+				android:background="#6F6E6E"
 				android:clickable="true">	
-				
-		         <TextView
-				    style="@style/viewStyle"
-				    android:textSize="16dp"
-				    android:textColor="#ffffff"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:gravity="center"
-				    android:paddingLeft="4dp"
-				    android:paddingBottom="2dp"
-				    android:layout_marginBottom="2dp"
-				    android:text="Select Toaster Text Color" />
+
+		         <LinearLayout
+			        android:id="@+id/ll1"
+					android:layout_height="wrap_content" 
+					android:layout_width="210dp"
+					android:orientation="vertical">
+					
+		              <TextView
+						    style="@style/viewStyle"
+						    android:textSize="16dp"
+						    android:textColor="#ffffff"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:gravity="center"
+						    android:paddingLeft="4dp"
+						    android:paddingBottom="2dp"
+						    android:layout_marginBottom="2dp"
+						    android:text="Select Toaster Text Color" />
+		             
+		              <TextView
+						    style="@style/viewStyle"
+						    android:textSize="12dp"
+						    android:textColor="#ffffff"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:gravity="center"
+						    android:padding="4dp"
+						    android:paddingBottom="2dp"
+						    android:layout_marginBottom="2dp"
+						    android:text="Selected Hexcode: N/A" 
+						    android:id="@+id/txtMessageColor"/>
+		          
+			          
+		             
+		         </LinearLayout>
 		         
-		          <TextView
-				    style="@style/viewStyle"
-				    android:textSize="12dp"
-				    android:textColor="#ffffff"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:gravity="center"
-				    android:paddingLeft="4dp"
-				    android:paddingBottom="2dp"
-				    android:layout_marginBottom="2dp"
-				    android:text="Selected Hexcode: N/A" 
-				    android:id="@+id/txtMessageColor"/>
+		         <LinearLayout  
+			              	android:orientation="vertical"
+				            android:background="#ffffff"
+				            android:paddingLeft="8dp"
+				            android:id="@+id/canMessageColor"
+				            android:layout_width="fill_parent"
+						    android:layout_height="fill_parent"/>
+		         
 		        
+			</LinearLayout>
+			
+			<LinearLayout
+			    android:alpha="0.7"
+		        android:id="@+id/llToasterMessage"
+				android:layout_height="wrap_content" 
+				android:layout_width="275dp"
+				android:orientation="vertical"
+				android:layout_margin="4dp"
+				android:padding="10dp"
+				android:layout_gravity="center"
+				android:layout_centerVertical="false"
+		    	android:layout_centerHorizontal="true"
+				android:background="#6F6E6E"
+				android:clickable="true">	
+
+		        
+		              <TextView
+						    style="@style/viewStyle"
+						    android:textSize="16dp"
+						    android:textColor="#ffffff"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:gravity="center"
+						    android:paddingLeft="4dp"
+						    android:paddingBottom="2dp"
+						    android:layout_marginBottom="2dp"
+						    android:text="Change Toaster Message:" />
+		             
+		              <TextView
+						    style="@style/viewStyle"
+						    android:textSize="12dp"
+						    android:textColor="#ffffff"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:gravity="center"
+						    android:padding="4dp"
+						    android:paddingBottom="2dp"
+						    android:layout_marginBottom="2dp"
+						    android:text="Toasted!!!" 
+						    android:id="@+id/txtMessage"/>
+
 			</LinearLayout>
 									    
 			<!--  
@@ -136,7 +217,7 @@
 		        android:ems="10"
 		        android:hint="enter hex code..." />
 		        
-		    -->
+		   
 			
 			<TextView
 			    style="@style/viewStyle"
@@ -156,6 +237,7 @@
 		        android:ems="10"
 		        android:hint="toaster duration..."
 		        android:inputType="numberSigned" />
+		        
 					
 			 <TextView
 			    style="@style/viewStyle"
@@ -175,7 +257,7 @@
 		        android:ems="10"
 		        android:hint="toaster text..." /> 		 
 			 
-			 <!--  
+			  
 			 <TextView
 			    style="@style/viewStyle"
 			    android:layout_width="wrap_content"
@@ -196,16 +278,19 @@
 		        
 		        -->
 		        
+		        
 			 <Spinner
 		        android:id="@+id/spinnerFontAwesome"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content" />
-		
+			 
+			<!-- 
 		    <Spinner
 		        android:id="@+id/spinnerFontAwesomeSpeed"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content" />
-		    
+		     -->
+		     
 		     <Spinner
 		        android:id="@+id/spinnerSelectFont"
 		        android:layout_width="match_parent"

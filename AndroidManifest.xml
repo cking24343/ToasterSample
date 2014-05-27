@@ -31,6 +31,14 @@
             </intent-filter>
         </activity>
         
+        <activity android:name="king.chad.toaster.sample.ToasterTextActivity" android:label="Toaster Text" 
+            android:theme="@android:style/Theme.Holo.Light.Dialog">>
+            <intent-filter>
+                <action android:name="king.chad.toaster.sample.ToasterTextActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
     </application>
 
 </manifest>
