@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Searchlayout"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+> 
+<TableLayout  android:layout_width="wrap_content" android:id="@+id/tableLayout" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_centerInParent="true">
+ <TableRow>
+  <TableLayout android:layout_width="wrap_content" android:id="@+id/tableLayout_1" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_centerInParent="true">
+	<TableRow android:layout_width="match_parent"
+		android:weightSum="2" android:layout_height="match_parent"
+		android:layout_weight="0">
+		
+		<!-- layout -->
+		<LinearLayout android:orientation="horizontal" android:layout_width="match_parent" 
+			android:layout_weight="0" android:gravity="left" android:layout_height="match_parent"
+			android:layout_margin="4dip">
+			
+			<!-- I placed the following table layout inside of the linear layout below to allow for white padding for the table, also added: "android:layout_margin="4dip" to the table itself for this to take affect -->
+		  	<LinearLayout style="@style/InvisibleBorder" android:visibility="visible" android:layout_weight="0" android:layout_margin="0dip" android:layout_width="match_parent" android:layout_height="match_parent">
+		  
+			<TableLayout style="@style/InvisibleBorder" android:layout_width="wrap_content" 
+				android:id="@+id/tableLayout_2" android:layout_height="wrap_content" 
+				android:layout_alignParentTop="true" android:layout_alignParentLeft="true" 
+				android:layout_alignParentRight="true" android:layout_margin="4dip"
+				>
+				<TableRow style="@style/BodyRow" android:id="@+id/tr_1" android:layout_width="wrap_content" android:layout_height="wrap_content" >
+        			<com.larswerkman.holocolorpicker.ColorPicker
+						android:id="@+id/picker"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+       			</TableRow>
+       			<TableRow style="@style/BodyRow" android:id="@+id/tr_2" android:layout_width="wrap_content" android:layout_height="wrap_content" >
+					<TextView
+				        android:id="@+id/txtColorPickerValue"
+				        android:gravity="center"
+				        android:layout_width="fill_parent"
+				        android:layout_height="50dp"
+				        android:layout_marginBottom="8dp"
+				        android:textSize="20dp"
+				        android:ems="10"/>
+       			</TableRow>
+        		<!-- 
+        		<TableRow style="@style/BodyRow" android:id="@+id/tr_2" android:layout_width="wrap_content" android:layout_height="wrap_content" >
+					<com.larswerkman.holocolorpicker.SVBar
+						android:id="@+id/svbar"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+       			</TableRow>
+       			<TableRow style="@style/BodyRow" android:id="@+id/tr_3" android:layout_width="wrap_content" android:layout_height="wrap_content" >
+        			<com.larswerkman.holocolorpicker.OpacityBar
+						android:id="@+id/opacitybar"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+       			</TableRow>
+				<TableRow style="@style/BodyRow" android:id="@+id/tr_4" android:layout_width="wrap_content" android:layout_height="wrap_content" >
+					<com.larswerkman.holocolorpicker.SaturationBar
+						android:id="@+id/saturationbar"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+				</TableRow>
+				<TableRow style="@style/BodyRow" android:id="@+id/tr_5" android:layout_width="wrap_content" android:layout_height="wrap_content" >
+					 <com.larswerkman.holocolorpicker.ValueBar
+						android:id="@+id/valuebar"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+       			</TableRow>
+       			 -->
+			</TableLayout>
+		  </LinearLayout>
+		</LinearLayout>
+		</TableRow>
+	</TableLayout>
+   </TableRow>
+   <TableRow >
+ </TableRow>
+</TableLayout>
+<LinearLayout
+    android:layout_below="@+id/tableLayout"
+    	        android:orientation="vertical"
+    	          android:layout_width="match_parent"
+    	          android:layout_height="wrap_content"
+    	          android:layout_row="1" 
+    	   		  android:layout_column="0">
+    	    
+    	        <View 
+				    android:id="@+id/horizontalDivider"
+				    android:layout_below="@+id/tableLayout"
+					android:layout_width="fill_parent"
+					android:layout_height="0.25dip"       
+					android:background="?android:dividerVertical"
+					/>
+				 
+				<LinearLayout 
+				   android:measureWithLargestChild="true"
+				    android:showDividers="middle"
+				    android:divider="?android:dividerHorizontal"
+				    style="?android:buttonBarStyle"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal"
+				    android:paddingTop="0dip"
+				    android:paddingLeft="2dip"
+				    android:paddingRight="2dip"
+				    android:layout_below="@+id/horizontalDivider">
+				
+				    <Button 
+				        android:id="@+id/btn_cancel"
+				        style="?android:borderlessButtonStyle"
+				        android:layout_width="0dip"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="center_vertical|center_horizontal"
+				        android:text="Cancel"/>
+						
+					
+				    <Button 
+				        android:id="@+id/btn_save"
+				        style="?android:borderlessButtonStyle"
+				        android:layout_width="0dip"
+				        android:layout_height="wrap_content"
+				        android:layout_weight="1"
+				        android:gravity="center_vertical|center_horizontal"
+				        android:text="Ok"/>
+				    
+				</LinearLayout>
+    	        
+    	    </LinearLayout>
+</RelativeLayout>
