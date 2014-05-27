@@ -1,4 +1,4 @@
 ToasterSample
 =============
 
-A demo android app that shows the different options available when calling using the Toaster Lib.
+A demo android app that shows the different options available while using the Toaster Lib.
