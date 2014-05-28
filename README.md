@@ -6,6 +6,16 @@ A demo android app that shows the different options available while using the To
 
 <img src="http://i34.photobucket.com/albums/d147/cking24343/Github/collection_framed_zps5aac1aea.png" />
 
+Demo Application
+================
+A simple demo application can be found on Google Play Store.
+
+<a href="https://play.google.com/store/apps/details?id=king.chad.toastersample">
+  <img alt="Google Play Store"
+       src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" />
+</a>
+
+
 How To Use
 ==============
 Create a Toaster Object and Initialize it:
