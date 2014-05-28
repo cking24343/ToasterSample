@@ -11,9 +11,9 @@ How To Use
 Create a Toaster Object and Initialize it:
 ```java
   //--Toaster Object--
-	ToastIt toastIt;
+  ToastIt toastIt;
 	
-	//--Initialize our toaster--
+  //--Initialize our toaster--
   toastIt = new ToastIt(this, true);
   
 ```
@@ -22,9 +22,9 @@ Make a call to show toaster object:
 ```java
   //--Basic call to toaster object--
   toastIt.show(
-      getResources().getDrawable(R.drawable.ic_launcher), //--pass image--
-			"Custom Toaster Message",                           //--pass message to be displayed--
-			font,                                               //--pass typeface font file to be used--
-			textHexCode,                                        //--pass hexcode value for the background color of toaster--
-			bgHexCode);                                         //--pass hexcode value for the text color of toaster--
+        getResources().getDrawable(R.drawable.ic_launcher), //--pass image--
+	"Custom Toaster Message",         //--pass message to be displayed--
+	font,                             //--pass typeface font file to be used--
+	textHexCode,                      //--pass hexcode value for the background color of toaster--
+	bgHexCode);                       //--pass hexcode value for the text color of toaster--
 ```
