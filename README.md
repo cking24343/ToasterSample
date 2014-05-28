@@ -42,7 +42,7 @@ Make a call to show toaster object:
 
 Github Projects Referenced:
 ===========================
-Boostrap icon implementation (used in Toaster Lib):
+Bootstrap icon implementation (used in Toaster Lib):
 https://github.com/Bearded-Hen/Android-Bootstrap
 
 Usage of the HoloColorPicker control:
