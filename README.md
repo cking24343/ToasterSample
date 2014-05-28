@@ -4,7 +4,7 @@ ToasterSample
 A demo android app that shows the different options available while using the Toaster Lib.
 
 
-<img src="https://i.imgflip.com/95upl.gif"/>
+<img src="http://i34.photobucket.com/albums/d147/cking24343/Github/2014_05_27_174900_framed_zpsc827aa39.png""/>
 
 How To Use
 ==============
