@@ -38,3 +38,12 @@ Make a call to show toaster object:
 	textHexCode,                      //--pass hexcode value for the text color of toaster--
 	bgHexCode);                       //--pass hexcode value for the background color of toaster--
 ```
+
+
+Github Projects Referenced:
+===========================
+Boostrap icon implementation (used in Toaster Lib):
+https://github.com/Bearded-Hen/Android-Bootstrap
+
+Usage of the HoloColorPicker control:
+https://github.com/LarsWerkman/HoloColorPicker
