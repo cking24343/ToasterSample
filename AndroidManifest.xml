@@ -6,6 +6,8 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
+    
+     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />  
 
     <application
         android:allowBackup="true"
@@ -27,6 +29,14 @@
             android:theme="@android:style/Theme.Holo.Light.Dialog">>
             <intent-filter>
                 <action android:name="king.chad.toaster.sample.HexcodeSelectorActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="king.chad.toaster.sample.PredefinedColorsActivity" android:label="Predefined Color Selector" 
+            android:theme="@android:style/Theme.Holo.Light.Dialog">>
+            <intent-filter>
+                <action android:name="king.chad.toaster.sample.PredefinedColorsActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
