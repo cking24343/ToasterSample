@@ -62,7 +62,7 @@ Make a call to show toaster object:
 	
   //--Basic call to toaster object if using font awesome icon--
   toastIt.show(
-	"fa-github"), 			  //--pass icon name--
+	"fa-github"),                     //--pass icon name--
 	"Custom Toaster Message",         //--pass message to be displayed--
 	font,                             //--pass typeface font file to be used--
 	textHexCode,                      //--pass hexcode value for the text color of toaster--
