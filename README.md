@@ -22,8 +22,13 @@ Create a Toaster Object and Initialize it:
 ```java
   //--Toaster Object--
   ToastIt toastIt;
+  
+  //--Initialize our toaster as such--
+  toastIt = new ToastIt(this);
+  
+  //--OR--
 	
-  //--Initialize our toaster--
+  //--If using images then initialize our toaster as such--
   toastIt = new ToastIt(this, true);
   
 ```
@@ -31,6 +36,14 @@ Create a Toaster Object and Initialize it:
 Make a call to show toaster object:
 ```java
   //--Basic call to toaster object--
+  toastIt.show(
+	"Custom Toaster Message",         //--pass message to be displayed--
+	textHexCode,                      //--pass hexcode value for the text color of toaster--
+	bgHexCode);                       //--pass hexcode value for the background color of toaster--
+	
+  //--OR--
+  
+  //--Basic call to toaster object if using images--
   toastIt.show(
 	getResources().getDrawable(R.drawable.ic_launcher), //--pass image--
 	"Custom Toaster Message",         //--pass message to be displayed--
