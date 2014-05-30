@@ -28,7 +28,7 @@ Create a Toaster Object and Initialize it:
   
   //--OR--
 	
-  //--If using images then initialize our toaster as such--
+  //--If using images/icons then initialize our toaster as such--
   toastIt = new ToastIt(this, true);
   
 ```
@@ -38,14 +38,31 @@ Make a call to show toaster object:
   //--Basic call to toaster object--
   toastIt.show(
 	"Custom Toaster Message",         //--pass message to be displayed--
+	font,                             //--pass typeface font file to be used--
 	textHexCode,                      //--pass hexcode value for the text color of toaster--
 	bgHexCode);                       //--pass hexcode value for the background color of toaster--
 	
+	
   //--OR--
+  
+  
+  /*
+  * If passing images you have two options, you can pass either an image file 
+  * or you can use the font awesome icons that are included in the Toaster Lib by 
+  * simply passing it the name of the icon.
+  */
   
   //--Basic call to toaster object if using images--
   toastIt.show(
 	getResources().getDrawable(R.drawable.ic_launcher), //--pass image--
+	"Custom Toaster Message",         //--pass message to be displayed--
+	font,                             //--pass typeface font file to be used--
+	textHexCode,                      //--pass hexcode value for the text color of toaster--
+	bgHexCode);                       //--pass hexcode value for the background color of toaster--
+	
+  //--Basic call to toaster object if using font awesome icon--
+  toastIt.show(
+	"fa-github"), 			  //--pass icon name--
 	"Custom Toaster Message",         //--pass message to be displayed--
 	font,                             //--pass typeface font file to be used--
 	textHexCode,                      //--pass hexcode value for the text color of toaster--
