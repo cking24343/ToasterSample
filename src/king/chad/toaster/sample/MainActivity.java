@@ -235,7 +235,22 @@ public class MainActivity extends Activity
 				    }
 				    else
 				    {
+				    	/*
 				    	toastIt = new ToastIt(MainActivity.this, true);
+				    	toastIt.setToasterAnimationSpeed(ToastIt.Speeds.FAST);
+				    	toastIt.setToasterFlashIcon(false);
+				    	toastIt.setToasterMessage(txtMessage.getText().toString());
+				    	toastIt.setToasterFontIcon(string_spinner_icon);
+				    	toastIt.setToasterFont(font);
+				    	toastIt.setToasterTextColor(textHexCode);
+				    	toastIt.setToasterTextSize(14);
+				    	toastIt.setToasterBGColor(hexCode);
+				    	toastIt.setToasterDuration(4000);
+				    	toastIt.setToasterRotation(ToastIt.Rotations.CounterClockwise);
+				    	//toastIt.clearValues();
+				    	toastIt.show();
+				    	*/
+				    	
 				    	/* 
 				    	toastIt.show(
 						    		string_spinner_icon,
@@ -253,13 +268,26 @@ public class MainActivity extends Activity
 					        		hexCode, 
 					        		duration, false, false, false, string_spinner_icon_speed);*/
 				    	
-				    	toastIt.show(
-					    		string_spinner_icon,
-					        		txtMessage.getText().toString(),
-					        		font,
-					        		textHexCode,
-					        		hexCode, 
-					        		duration);
+				    	try{
+				    		toastIt.show(
+						    		string_spinner_icon,
+						        		txtMessage.getText().toString(),
+						        		font,
+						        		textHexCode,
+						        		hexCode, 
+						        		duration);
+				    		
+				    	}catch(Exception ex){
+				    		toastIt = new ToastIt(MainActivity.this, true);
+				    		toastIt.show(
+						    		string_spinner_icon,
+						        		txtMessage.getText().toString(),
+						        		font,
+						        		textHexCode,
+						        		hexCode, 
+						        		duration);
+				    	}
+				    	
 				    }
 				   
 			}

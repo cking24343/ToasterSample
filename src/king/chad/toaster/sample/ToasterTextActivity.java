@@ -8,15 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.larswerkman.holocolorpicker.ColorPicker;
-
 public class ToasterTextActivity extends Activity 
 {
 	Button btnCancel;
 	Button btnOk;
 	EditText txtToasterText;
-	
-	ColorPicker picker;
 	
     /** Called when the activity is first created. */
     @Override
